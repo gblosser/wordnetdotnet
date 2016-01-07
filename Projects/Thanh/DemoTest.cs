@@ -16,7 +16,8 @@ namespace WordsMatching
 		static void Main(string[] args)
 		{
 			// TDMS 21 Sept 2005 - added dictionary path
-			Wnlib.WNCommon.path = "C:\\Program Files\\WordNet\\3.0\\dict\\";
+			//Wnlib.WNCommon.path = "C:\\Program Files\\WordNet\\3.0\\dict\\";
+			Wnlib.WNCommon.path = @"C:\Users\blosser\Downloads\dict\";
 
 			DemoTest t=new DemoTest() ;			
 		}

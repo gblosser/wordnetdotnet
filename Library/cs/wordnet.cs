@@ -53,8 +53,8 @@ namespace Wnlib
 		public int taggedSenses;
 		public const int ALLSENSES = 0;
 
-		public Search(string w, bool doMorphs, string p, string s, int sn)
-			: this(w, doMorphs, PartOfSpeech.of(p), new SearchType(s), sn)
+		public Search(string theWord, bool doMorphs, string thePartOfSpeech, string theSearchType, int sn)
+			: this(theWord, doMorphs, PartOfSpeech.of(thePartOfSpeech), new SearchType(theSearchType), sn)
 		{
 		}
 
@@ -91,13 +91,13 @@ namespace Wnlib
 		/// </summary>
 		/// <param name="m">Specify if morphs should be searched</param>
 		/// <param name="p">The Part Of Speech to perform the search on</param>
-		public void do_search(bool m, string p)
+		public void do_search(bool doMorphs, string thePartOfSpeech)
 		{
 			if (parts == null)
 				parts = new Hashtable();
-			Search s = new Search(word, PartOfSpeech.of(p), sch, whichsense);
-			s.do_search(m);
-			parts[p] = s;
+			Search s = new Search(word, PartOfSpeech.of(thePartOfSpeech), sch, whichsense);
+			s.do_search(doMorphs);
+			parts[thePartOfSpeech] = s;
 			buf += s.buf;
 		}
 
